@@ -1,0 +1,34 @@
+
+  <%- include('header'); -%>
+  <!DOCTYPE html> 
+<html> 
+
+<body> 
+
+<table id="example" class="table table-striped table-bordered table-dark table-hover" style="width:100%">
+  <tr>
+
+    <th>Name</th>
+    <th>Email</th>
+    <th>Image</th>
+    <th>Action</th>
+  </tr>
+  
+  <% rows.forEach((post) => { %> 
+  <tr>
+
+    <td><%=post.name %></td>
+    <td><%=post.email%></td>
+    <!-- <td><%=post.username%></td> -->
+    <td> <a href="/imageUploadView/<%=post.id %>"><img style="height:100px;width:100px;" alt="No Image" src="../uploads/<%=post.profileimage%>" class="responsive-img"></a></td>
+    <!-- <%= typeof file != 'undefined' ? file : '' %> -->
+    <td>
+        <a href="/updateView/<%=post.id %>" class="btn btn-warning">Update</a>
+        <a href="/delete/<%=post.id %>" class="btn btn-danger">Delete</a></td>
+  </tr>
+  <% }) %>
+ 
+</table>
+
+</body> 
+</html>  

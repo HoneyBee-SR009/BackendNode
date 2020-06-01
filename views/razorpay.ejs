@@ -1,0 +1,49 @@
+<!-- 
+<html>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+const options = {
+	key: "YOUR_KEY_ID",
+	amount: "2000", // 2000 paise 
+	name: "Merchant Name",
+	description: "Purchase Description",
+	image: "/your_logo.png",
+	handler: function (resp) {
+		let payment_id = resp.razorpay_payment_id;
+		// can be passed to server
+		console.log('payment id: ' + payment_id);
+	},
+	prefill: {
+		"name": "John Doe",
+		"email": "test@test.com"
+	},
+	notes: {
+		"address": "Hello World"
+	},
+	theme: {
+		"color": "#F37254"
+	}
+};
+const rzp = new Razorpay(options);
+// Open Gateway
+rzp.open();
+
+</html> -->
+
+<html>
+<form action="/razor" method="POST">
+<!-- Note that the amount is in paise = 50 INR -->
+<script
+    src="https://checkout.razorpay.com/v1/checkout.js"
+    data-key="rzp_test_HdHWbhLhPjP9qa"
+    data-amount="5000"
+    data-buttontext="Pay with Razorpay"
+    data-name="Merchant Name"
+    data-description="Purchase Description"
+    data-image="https://your-awesome-site.com/your_logo.jpg"
+    data-prefill.name="name"
+    data-prefill.email="support@razorpay.com"
+    data-theme.color="#F37254"
+></script>
+<input type="hidden" value="Hidden Element" name="hidden">
+</form>
+</html>
